@@ -33,3 +33,6 @@
 
 # CSV files
 *.csv
+
+myo-sdk-win-0.9.0
+__pycache__
