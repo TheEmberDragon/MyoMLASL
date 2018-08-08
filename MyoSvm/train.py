@@ -11,6 +11,8 @@ from gtts import gTTS
 from io import BytesIO
 from playsound import playsound
 
+# Path to the training data folder
+pathDataFolder = '../data'
 
 letters = ['a', 'b', 'c', 'e', 'f', 'o']
 
@@ -30,8 +32,8 @@ def feature_extraction(input_array):
     return np.concatenate((mean, median, var, std, maxs, mins), axis=0)
 
 for letter in letters:
-    for file_name in fnmatch.filter(os.listdir('data'), "[0-9]-{0}*.csv".format(letter)):
-        X.append(feature_extraction(np.loadtxt('data/'+file_name, delimiter=',')))
+    for file_name in fnmatch.filter(os.listdir(pathDataFolder), "[0-9]-{0}*.csv".format(letter)):
+        X.append(feature_extraction(np.loadtxt(pathDataFolder+'/'+file_name, delimiter=',')))
         Y.append(letter)
 
 svm_learner = SVC(    # Create the SVM learner

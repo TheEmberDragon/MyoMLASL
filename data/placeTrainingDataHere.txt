@@ -1,0 +1,2 @@
+All training set data created from MyoCapture application must be in cvs file in this current directory.
+

@@ -31,5 +31,18 @@
 *.out
 *.app
 
+# MyoAndroid ignores
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
 myo-sdk-win-0.9.0
 __pycache__
+*.pyc
