@@ -21,6 +21,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import sklearn.metrics as metrics
 
+pathDataFolder = '../data'
 
 num_periods = 250
 inputs = 12
@@ -44,8 +45,8 @@ def get_positive_label(letter):
 Y = []
     
 for i, letter in enumerate(letters):
-    for file_name in fnmatch.filter(os.listdir('data'), "[0-9]-{0}*.csv".format(letter)):
-        X.append(np.loadtxt('data/'+file_name, delimiter=','))
+    for file_name in fnmatch.filter(os.listdir(pathDataFolder), "[0-9]-{0}*.csv".format(letter)):
+        X.append(np.loadtxt(pathDataFolder+'/'+file_name, delimiter=','))
         Y.append([get_positive_label(letter)] * 250)
 
 # Split into training set and testing set
