@@ -46,3 +46,6 @@
 myo-sdk-win-0.9.0
 __pycache__
 *.pyc
+
+# Static data folder
+/data
